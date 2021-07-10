@@ -9,12 +9,13 @@ CODE SEGMENT
     POP DS 
     MOV AX,DATA
     MOV DS,AX
-    MOV AX,10011000B
+    MOV AX,10011000B     ;152
     MOV CX,5
 
-L1: SUB AL,01000000B
+L1: SUB AX,01000000B     ;64
     LOOP L1
-    MOV  ans,AX
+
+    MOV  ans,AX          ;AX:FF58
 
     MOV AH,4CH
     INT 21H

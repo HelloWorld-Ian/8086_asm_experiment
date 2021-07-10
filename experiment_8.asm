@@ -4,7 +4,7 @@ CODE SEGMENT
 	       mov ax,21    ;ax:0015
 	       mov bx,71    ;bx:0047
 	       add ax,bx
-	       daa          ;ax:0062
+	       daa          ;ax:0062      daa 压缩BCD码加法
 
 	       mov ax,12    ;ax:000c
 	       mov bx,49    ;bx:0031
@@ -24,7 +24,7 @@ CODE SEGMENT
 	       mov ax,74    ;ax:004a
 	       mov bx,58    ;bx:003a
 	       sub ax,bx    
-	       das          ;ax:0010
+	       das          ;ax:0010      压缩BCD码减法
 
 	       mov ax,43    ;ax:002b
 	       mov bx,54    ;bx:0036
@@ -34,7 +34,7 @@ CODE SEGMENT
 	       mov ax,21    
 	       mov bx,71
 	       add ax,bx
-	       aaa          ;ax:0102
+	       aaa          ;ax:0102      非压缩BCD码加法
 
 	       mov ax,12
 	       mov bx,49
@@ -49,7 +49,7 @@ CODE SEGMENT
 	       mov ax,46
 	       mov bx,33
 	       sub ax,bx
-	       aas          ;ax:FF07
+	       aas          ;ax:FF07       非压缩BCD码减法
 
 	       mov ax,74
 	       mov bx,58

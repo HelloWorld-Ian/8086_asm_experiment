@@ -21,7 +21,7 @@ CODE SEGMENT
 			  CALL      MATCH
 
 			   MOV      AH,09H
-			   INT      21H
+			   INT      21H 
 			   MOV      AH,4CH
 			   INT      21H
 
@@ -103,7 +103,7 @@ GET_ANS_FALSE:
 			   MOV      AX,2
 			   MUL      DI
 			  XCHG      AX,DI
-	           MOV      NEXT+DI,SI
+	           MOV      [NEXT+DI],SI
 			  XCHG      AX,DI
 			   JMP      DP_PART
 
@@ -111,3 +111,4 @@ GET_ANS_FALSE:
          
 		 CODE  ENDS
 	           END      START    		  
+ 		  

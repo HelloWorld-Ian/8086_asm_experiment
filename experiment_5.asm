@@ -17,7 +17,7 @@ CODE SEGMENT
 
 	         mov      ax, 0FFFFh
 	         mov      bx, 01h
-	         add      ax, bx
+	         add      ax, bx           ;AX:0000 CF:1
 
 			popf                       ;与PUSHF相反, 从堆栈的顶部弹出两个字节送到PSW寄存器中, 同时堆栈指针值加2
 

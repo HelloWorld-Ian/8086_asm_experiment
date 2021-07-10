@@ -7,11 +7,21 @@ CODE SEGMENT
 			SAL       AX,1        
 			                      ; AX: 8F1CH
 			MOV       AX,08F1DH
-			RCL       AX,5        ;RCL: 带进位循环左移（最高位移到CF，CF移到最低位）  
-			                      ; AX：E3B8H
-			RCR       AX,7        ;RCR: 带进位循环右移
-			                      ; AX: E3C7H
+
+			MOV       CX,5
+	
+	REPEAT1:
+			RCL       AX,1        ;RCL: 带进位循环左移（最高位移到CF，原来CF存储的数移到最低位）  
+			LOOP      REPEAT1      
+   
+            MOV       CX,7
+  
+   REPEAT2:		
+			RCR       AX,1        ;RCR: 带进位循环右移
+			LOOP      REPEAT2     ; AX: E3C7H
+
 			MOV       AH,4CH
 			INT       21H
-	 CODE   ENDS
+	
+	CODE   ENDS
 	        END       START
